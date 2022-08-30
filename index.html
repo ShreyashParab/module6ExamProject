@@ -62,8 +62,8 @@
                   </div>
                 </div>
                 <div class="col">
-                  <label for="validationCustom02" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="validationCustom02">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="lastName">
                   <div class="valid-feedback">
                     Looks good!
                   </div>
@@ -72,48 +72,70 @@
                   </div>
                 </div>
                 <div class="col">
-                  <label for="validationCustomUsername" class="form-label">Email</label>
+                  <label for="email" class="form-label">Email</label>
                   <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend">
+                    <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend">
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
                     <div class="invalid-feedback">
-                      Please choose a username.
+                      Please enter a valid email!
                     </div>
                   </div>
                 </div>
                 <div class="col">
-                  <label for="validationCustom03" class="form-label">Phone number</label>
-                  <input type="text" class="form-control" id="validationCustom03">
-                  <div class="invalid-feedback">
-                    Please provide a valid city.
+                  <label for="phoneNumber" class="form-label">Phone number</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">+91</span>
+                    <input type="number" class="form-control" id="phoneNumber" aria-describedby="inputGroupPrepend">
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter a valid number!
+                    </div>
                   </div>
                 </div>
                 <div class="col">
-                  <label for="validationCustom04" class="form-label">Batch number</label>
-                  <select class="form-select" id="validationCustom04" >
-                    <option selected disabled value="">Choose...</option>
-                    <option>...</option>
+                  <label for="batchNumber" class="form-label">Batch number</label>
+                  <select class="form-select" id="batchNumber" >
+                    <option selected disabled value="">Choose Batch Number...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
                   </select>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                   <div class="invalid-feedback">
-                    Please select a valid state.
+                    Please select a valid batch!.
                   </div>
                 </div>
                 <div class="col">
-                  <label for="validationCustom05" class="form-label">Current module</label>
-                  <select class="form-select" id="validationCustom04" >
-                    <option selected disabled value="">Choose...</option>
-                    <option>...</option>
+                  <label for="batchNumber" class="form-label">Current module</label>
+                  <select class="form-select" id="batchNumber" >
+                    <option selected disabled value="">Choose Current Module...</option>
+                    <option>5</option>
+                    <option>5</option>
+                    <option>5</option>
                   </select>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                   <div class="invalid-feedback">
-                    Please select a valid state.
+                    Please select a valid module!.
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
-                    <label class="form-check-label" for="invalidCheck">
+                    <input class="form-check-input" type="checkbox" value="" id="tnc">
+                    <label class="form-check-label" for="tnc">
                       Agree to terms and conditions
                     </label>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
                     <div class="invalid-feedback">
                       You must agree before submitting.
                     </div>
