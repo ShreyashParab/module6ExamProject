@@ -54,21 +54,21 @@
                 <h1 class="title">Registration Form</h1>
                 <div class="col">
                   <label for="firstName" class="form-label">First name</label>
-                  <input type="text" class="form-control" id="firstName">
-                  <div class="valid-feedback">
+                  <input type="text" class="form-control" id="firstName" autocomplete="off">
+                  <div class="valid-feedback" id="firstname-valid">
                     <i class="fa-solid fa-circle-check" style="color: green;"></i> Looks good!
                   </div>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="firstname-invalid">
                     <i class="fa-solid fa-circle-exclamation" style="color: red;" title="must have at least 3 characters"></i> Please enter a valid name!
                   </div>
                 </div>
                 <div class="col">
                   <label for="lastName" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="lastName">
-                  <div class="valid-feedback">
+                  <input type="text" class="form-control" id="lastName" autocomplete="off">
+                  <div class="valid-feedback" id="lastname-valid">
                     <i class="fa-solid fa-circle-check" style="color: green;"></i> Looks good!
                   </div>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="lastname-invalid">
                     <i class="fa-solid fa-circle-exclamation" style="color: red;" title="must have at least 3 characters"></i> Please enter a valid name!
                   </div>
                 </div>
@@ -76,12 +76,12 @@
                   <label for="email" class="form-label">Email</label>
                   <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend">
-                    <div class="valid-feedback">
+                    <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend" autocomplete="off">
+                    <div class="valid-feedback" id="email-valid">
                       <i class="fa-solid fa-circle-check" style="color: green;"></i> Looks good!
                     </div>
-                    <div class="invalid-feedback">
-                      <i class="fa-solid fa-circle-exclamation" style="color: red;" title="must have '@' and '.' and have domain like '.in'"></i> Please enter a valid email!
+                    <div class="invalid-feedback" id="email-invalid">
+                      <i class="fa-solid fa-circle-exclamation" style="color: red;" title="must have '@' and '.' and have domain like 'gmail.in' etc."></i> Please enter a valid email!
                     </div>
                   </div>
                 </div>
@@ -89,11 +89,11 @@
                   <label for="phoneNumber" class="form-label">Phone number</label>
                   <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">+91</span>
-                    <input type="number" class="form-control" id="phoneNumber" aria-describedby="inputGroupPrepend">
-                    <div class="valid-feedback">
+                    <input type="number" class="form-control" id="phoneNumber" aria-describedby="inputGroupPrepend" autocomplete="off">
+                    <div class="valid-feedback" id="phone-valid">
                       <i class="fa-solid fa-circle-check" style="color: green;"></i> Looks good!
                     </div>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback" id="phone-invalid">
                       <i class="fa-solid fa-circle-exclamation" style="color: red;" title="must have 10 numbers"></i> Please enter a valid number!
                     </div>
                   </div>
@@ -106,25 +106,25 @@
                     <option>2</option>
                     <option>3</option>
                   </select>
-                  <div class="valid-feedback">
+                  <div class="valid-feedback" id="batch-valid">
                     <i class="fa-solid fa-circle-check" style="color: green;"></i> Looks good!
                   </div>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="batch-invalid">
                     <i class="fa-solid fa-circle-exclamation" style="color: red;"  title="select one of below option"></i> Please select a valid batch!
                   </div>
                 </div>
                 <div class="col">
-                  <label for="batchNumber" class="form-label">Current module</label>
-                  <select class="form-select" id="batchNumber" >
+                  <label for="moduleNumber" class="form-label">Current module</label>
+                  <select class="form-select" id="moduleNumber" >
                     <option selected disabled value="">Choose Current Module...</option>
                     <option>5</option>
                     <option>6</option>
                     <option>7</option>
                   </select>
-                  <div class="valid-feedback">
+                  <div class="valid-feedback" id="module-valid">
                     <i class="fa-solid fa-circle-check" style="color: green;"></i> Looks good!
                   </div>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="module-invalid">
                     <i class="fa-solid fa-circle-exclamation" style="color: red;" title="select one of below option"></i> Please select a valid module!.
                   </div>
                 </div>
@@ -134,16 +134,13 @@
                     <label class="form-check-label" for="tnc">
                       Agree to terms and conditions
                     </label>
-                    <div class="valid-feedback">
-                      <i class="fa-solid fa-circle-check" style="color: green;"></i> Looks good!
-                    </div>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback" id="tnc-invalid">
                       <i class="fa-solid fa-circle-exclamation" style="color: red;" title="agree the terms and conditions"></i> You must agree before submitting.
                     </div>
                   </div>
                 </div>
                 <div class="col">
-                  <button class="btn btn-dark" type="submit">Submit</button>
+                  <button class="btn btn-dark" type="button" onclick="validate()">Submit</button>
                 </div>
             </form>
         </div>
@@ -169,6 +166,7 @@
 
     <script src="index.js"></script>
     <script src="https://cdn.lordicon.com/cqgtrhpg.json"></script> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

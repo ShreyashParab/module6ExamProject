@@ -21,6 +21,11 @@ body{
     text-align: center;
 }
 
+input , select{
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 .btn{
     float: right;
     background-color: black;
